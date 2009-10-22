@@ -7,9 +7,7 @@ DriverManager.registerDriver(driver)
 Connection con = DriverManager.getConnection(args[1], args[2], args[3]);
 con.setAutoCommit(false);
 
-con.commit()
-
-print 'Please shutdown DB server in 30 seconds'
+print 'Please shut down the DB server within 30 seconds'
 (1..30).each { Thread.sleep(1000); print '.'; }
 println ""
 
@@ -17,6 +15,6 @@ try {
     con.commit()
     println 'Connection#commit() throws NO exception!!'
 } catch (SQLException e) {
-    println 'Connection#commit() throws exception.'
+    println "Connection#commit() throws exception. ${e.toString()}"
 }
 
