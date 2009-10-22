@@ -10,7 +10,8 @@ con.setAutoCommit(false);
 con.commit()
 
 print 'Please shutdown DB server in 30 seconds'
-(1..30).each { Thread.sleep(1000); print '.'; } println ""
+(1..30).each { Thread.sleep(1000); print '.'; }
+println ""
 
 try {
     con.commit()
