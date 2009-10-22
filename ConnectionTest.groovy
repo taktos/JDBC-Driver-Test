@@ -1,5 +1,6 @@
 import java.sql.*
 
+// groovy -cp [driver.jar] ConnectionTest.groovy [driverClass] [url] [user] [password]
 Class driverClass = Class.forName(args[0])
 Driver driver = driverClass.newInstance()
 println "${driver.class.name}-${driver.majorVersion}.${driver.minorVersion} [JDBC Compliant: ${driver.jdbcCompliant()}]"
